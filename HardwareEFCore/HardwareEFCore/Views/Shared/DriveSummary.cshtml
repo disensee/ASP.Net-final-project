@@ -1,0 +1,27 @@
+﻿@model Drive
+
+<div class="well" style="padding-bottom:35px;">
+    <h3>
+        <strong>@Model.Manufacturer @Model.Model</strong><br />
+    </h3>
+    <span class="lead">
+        Interface: @Model.Interface <br />
+        Transfer Protocol: @Model.TransferProtocol <br />
+        Storage Capacity: @Model.SizeInGB GB <br />
+    </span>
+        
+    <form id="@Model.DriveId" asp-action="AddToCart"
+        asp-controller="Cart" method="post">
+
+        <input type="hidden" asp-for="DriveId" />
+        <input type="hidden" name="returnURL"
+            value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+                
+        <button type="submit" class="btn btn-success btn-sm pull-right">
+            Add to Build
+        </button>
+
+    </form>
+        
+    
+</div>

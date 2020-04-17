@@ -1,0 +1,30 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>PC Hardware</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="navbar navbar-inverse" role="navigation">
+        <a class="navbar-brand" href="#">PC BUILDER</a>
+
+        <div class="pull-right">
+            @await Component.InvokeAsync("CartSummary")
+        </div>
+    </div>
+
+    <div class="row panel">
+        <div id="categories" class="col-xs-3">
+            <a class="btn btn-default btn-block" href="/Computer">Computers</a><br />
+            <a class="btn btn-default btn-block" href="/Drive">Drives</a>
+                <div id="interfaceFilter" class="col-xs-3" style="float:right; margin-top:10px">
+                    @await Component.InvokeAsync("NavigationMenu")
+                </div>
+        </div>
+        <div class="col-xs-8">
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>

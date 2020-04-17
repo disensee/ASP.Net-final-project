@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Drive>
+
+@{
+    ViewBag.Title = "All Drives";
+    Layout = "_AdminLayout";
+}
+
+<table class="table table-striped table-bordered table-condensed">
+    <tr>
+        <th class="text-right">ID</th>
+        <th>Drive Manufacturer</th>
+        <th class="text-right">Drive Model</th>
+        <th class="text-center">Actions</th>
+    </tr>
+    @foreach (var drive in Model)
+    {
+        <tr>
+            <td class="text-right">@drive.DriveId</td>
+            <td>@drive.Manufacturer</td>
+            <td class="text-right">@drive.Model</td>
+            <td class="text-center">
+                <form asp-action="Delete" method="post">
+                    <a asp-action="Edit" class="btn btn-sm btn-warning"
+                       asp-route-driveId="@drive.DriveId">Edit</a>
+                    <input type="hidden" name="DriveId" value="@drive.DriveId" />
+                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>
+<div class="text-center">
+    <a asp-action="Create" class="btn btn-primary">Add Drive</a>
+</div>

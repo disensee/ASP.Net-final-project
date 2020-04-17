@@ -1,0 +1,11 @@
+﻿@model ComputerListViewModel
+
+<h1>Computers</h1>
+@foreach(Computer c in Model.Computers)
+{
+    @Html.Partial("ComputerSummary", c)
+}
+
+<div page-model="@Model.PagingInfo" page-action="List" page-classes-enabled="true" page-class="btn"
+    page-class-normal="btn-default" page-class-selected="btn-primary" class="btn-group pull-right">
+</div>
