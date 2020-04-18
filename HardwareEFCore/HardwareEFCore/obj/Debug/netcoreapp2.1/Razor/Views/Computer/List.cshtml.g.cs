@@ -86,7 +86,7 @@ Write(Html.Partial("ComputerSummary", c));
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(142, 208, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bbebefb20f654ac7abc57c15c8e495e2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f0ffe8b6f80d483fab46a5c1f584effb", async() => {
                 BeginContext(342, 2, true);
                 WriteLiteral("\r\n");
                 EndContext();

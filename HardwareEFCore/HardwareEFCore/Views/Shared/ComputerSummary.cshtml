@@ -1,5 +1,6 @@
 ﻿@model Computer
 
+
 <div class="well">
     <h2>@Model.Manufacturer  @Model.Model - @Model.Nickname</h2>
     <table class="table table-striped table-bordered">
@@ -8,6 +9,7 @@
                 <td>CPU</td>
                 <td>RAM</td>
                 <td>Drive(s)</td>
+                <td>Build Photo</td>
             </tr>
         </thead>
 
@@ -28,6 +30,30 @@
                 {
 
                     <p>@d.Manufacturer @d.Model @d.SizeInGB GB</p><br />
+                }
+            </td>
+            <td>
+                @if (Model.ImagePath != null)
+                { 
+                    <img src="@Model.ImagePath" alt="Computer photo" style="max-width: 350px; height:auto;" />
+
+                    <div>
+                        <form asp-action="DeleteImage" asp-controller="Computer" method="post" enctype="multipart/form-data">
+                            <input type="hidden" asp-for="ComputerId" />
+                            <button asp-action="DeleteImage" class="btn btn-sm btn-danger" type="submit">Delete Photo</button>
+                        </form>
+                    </div>
+                }
+                else
+                {
+                    <p>No photo of completed build has been uploaded</p>
+                    <div id="upload-image" class="form-group">
+                        <form asp-action="UploadImage" asp-controller="Computer" method="post" enctype="multipart/form-data">
+                            <input type="hidden" asp-for="ComputerId" />
+                            <input class="input input-sm pull-left" type="file" name="image" id="image-uploader" />
+                            <button asp-action="UploadImage" class="btn btn-sm btn-success" type="submit">Upload Image</button>
+                        </form>
+                    </div>
                 }
             </td>
         </tr>

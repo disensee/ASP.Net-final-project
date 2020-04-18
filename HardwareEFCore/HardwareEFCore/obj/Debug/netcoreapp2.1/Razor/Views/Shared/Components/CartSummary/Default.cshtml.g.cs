@@ -88,7 +88,7 @@ using HardwareEFCore.Infrastructure;
             WriteLiteral("\r\n    ");
             EndContext();
             BeginContext(227, 227, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5f08ace1a36b4b83a3d3f81078f08854", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "94a1fc18a6e34db686004d161f4ab230", async() => {
                 BeginContext(399, 51, true);
                 WriteLiteral("\r\n        <i class=\"fa fa-shopping-cart\"></i>\r\n    ");
                 EndContext();

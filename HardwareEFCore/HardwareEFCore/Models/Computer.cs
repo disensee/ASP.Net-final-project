@@ -12,6 +12,7 @@ namespace HardwareEFCore.Models
         public string Manufacturer { get; set; }
         public string Model { get; set; }
         public string Nickname { get; set; }
+        public string ImagePath { get; set; }
 
         //Associations
         public List<CPU> Cpus { get; set; }

@@ -70,7 +70,7 @@ using HardwareEFCore.Infrastructure;
             WriteLiteral("    <li>");
             EndContext();
             BeginContext(160, 289, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a9505a08575043b0a81055007b953506", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2d7f933a5c794513bf78fe0901b746e2", async() => {
                 BeginContext(425, 14, false);
 #line 11 "C:\Users\Dylan\Documents\School\ASP\labRepos\asp_lab12\HardwareEFCore\HardwareEFCore\Views\Shared\Components\NavigationMenu\Default.cshtml"
                      Write(driveInterface);

@@ -8,5 +8,7 @@ namespace HardwareEFCore.Models
     public interface IComputerRepository
     {
         IEnumerable<Computer> Computers { get; }
+
+        void SaveComputer(Computer computer);
     }
 }

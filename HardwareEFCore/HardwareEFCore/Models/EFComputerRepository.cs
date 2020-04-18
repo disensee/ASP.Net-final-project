@@ -19,6 +19,17 @@ namespace HardwareEFCore.Models
         {
             this.context = context;
         }
+
+        public void SaveComputer(Computer computer)
+        {
+            Computer dbEntry = context.Computers.FirstOrDefault(c => c.ComputerId == computer.ComputerId);
+            if(dbEntry != null)
+            {
+                dbEntry.ImagePath = computer.ImagePath;
+            }
+
+            context.SaveChanges();
+        }
     }
 
 }

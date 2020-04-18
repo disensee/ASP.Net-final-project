@@ -53,25 +53,6 @@ namespace HardwareEFCore.Migrations
                     b.ToTable("BuildOrders");
                 });
 
-            modelBuilder.Entity("HardwareEFCore.Models.BuildPhoto", b =>
-                {
-                    b.Property<int>("BuildPhotoId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("ComputerId");
-
-                    b.Property<byte[]>("ImageData");
-
-                    b.Property<string>("PhotoTitle");
-
-                    b.HasKey("BuildPhotoId");
-
-                    b.HasIndex("ComputerId");
-
-                    b.ToTable("BuildPhotos");
-                });
-
             modelBuilder.Entity("HardwareEFCore.Models.CartLine", b =>
                 {
                     b.Property<int>("CartLineId")
@@ -98,6 +79,8 @@ namespace HardwareEFCore.Migrations
                     b.Property<int>("ComputerId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ImagePath");
 
                     b.Property<string>("Manufacturer");
 
@@ -187,13 +170,6 @@ namespace HardwareEFCore.Migrations
                     b.HasIndex("ComputerId");
 
                     b.ToTable("Ram");
-                });
-
-            modelBuilder.Entity("HardwareEFCore.Models.BuildPhoto", b =>
-                {
-                    b.HasOne("HardwareEFCore.Models.Computer")
-                        .WithMany("Photos")
-                        .HasForeignKey("ComputerId");
                 });
 
             modelBuilder.Entity("HardwareEFCore.Models.CartLine", b =>

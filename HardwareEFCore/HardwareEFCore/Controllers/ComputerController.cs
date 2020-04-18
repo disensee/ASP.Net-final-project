@@ -5,6 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using HardwareEFCore.Models;
 using HardwareEFCore.Models.ViewModels;
+using System.Web;
+using System.Web.Mvc;
+using System.IO;
+using System.Web.Helpers;
+using Microsoft.AspNetCore.Http;
 
 namespace HardwareEFCore.Controllers
 {
@@ -40,14 +45,48 @@ namespace HardwareEFCore.Controllers
         }
 
         [HttpPost]
-        public IActionResult UploadImage()
+        public IActionResult UploadImage(Computer computer)
         {
-            foreach(var image in Request.Form.Files)
+            var photos = HttpContext.Request.Form.Files;
+            if (photos != null)
             {
-                
+                foreach (var image in photos)
+                {
+                    if (image != null)
+                    {
+                        string imgName = Path.GetFileName(image.FileName);
+                        string imgExt = Path.GetExtension(imgName);
+
+                        FileStream file = new FileStream(@"C:\Users\Dylan\Documents\School\ASP\labRepos\asp_lab12\HardwareEFCore\HardwareEFCore\wwwroot\Images\" + imgName, FileMode.Create);
+                        using(var ms = new MemoryStream())
+                        {
+                            image.CopyTo(ms);
+                            ms.WriteTo(file);
+                            file.Close();
+                            ms.Close();
+
+                            computer.ImagePath = "/Images/" + imgName;
+                        }
+                    computerRepo.SaveComputer(computer);
+                    }
+                }
+            }
+            else
+            {
+                return View("List");
             }
 
-            return null;
+            return RedirectToAction("List");
+        }
+
+        [HttpPost]
+        public IActionResult DeleteImage(int computerId)
+        {
+            Computer computer = computerRepo.Computers.FirstOrDefault(c => c.ComputerId == computerId);
+            computer.ImagePath = null;
+            computerRepo.SaveComputer(computer);
+
+            return RedirectToAction("List");
         }
         
     }
