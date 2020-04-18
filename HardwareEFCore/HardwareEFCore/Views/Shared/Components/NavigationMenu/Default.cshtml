@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<string>
 
-
+<li><a class="btn btn-block btn-default" href="/Drive">All Drives</a></li>
 @foreach (string driveInterface in Model)
 {
-    <a class="btn btn-block
+    <li><a class="btn btn-block btn-default
        @(driveInterface == ViewBag.SelectedDriveInterface ? "btn-primary" : "btn-default")"
        asp-action="List"
        asp-controller="Drive"
        asp-route-driveInterface="@driveInterface"
        asp-route-page="1">@driveInterface
-    </a>
+    </a></li>
 }

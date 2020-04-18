@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dylan\\Documents\\School\\ASP\\labRepos\\asp-lab10\\HardwareEFCore\\HardwareEFCore\\HardwareEFCore.csproj": {}
+    "C:\\Users\\Dylan\\Documents\\School\\ASP\\labRepos\\asp_lab12\\HardwareEFCore\\HardwareEFCore\\HardwareEFCore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dylan\\Documents\\School\\ASP\\labRepos\\asp-lab10\\HardwareEFCore\\HardwareEFCore\\HardwareEFCore.csproj": {
+    "C:\\Users\\Dylan\\Documents\\School\\ASP\\labRepos\\asp_lab12\\HardwareEFCore\\HardwareEFCore\\HardwareEFCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dylan\\Documents\\School\\ASP\\labRepos\\asp-lab10\\HardwareEFCore\\HardwareEFCore\\HardwareEFCore.csproj",
+        "projectUniqueName": "C:\\Users\\Dylan\\Documents\\School\\ASP\\labRepos\\asp_lab12\\HardwareEFCore\\HardwareEFCore\\HardwareEFCore.csproj",
         "projectName": "HardwareEFCore",
-        "projectPath": "C:\\Users\\Dylan\\Documents\\School\\ASP\\labRepos\\asp-lab10\\HardwareEFCore\\HardwareEFCore\\HardwareEFCore.csproj",
+        "projectPath": "C:\\Users\\Dylan\\Documents\\School\\ASP\\labRepos\\asp_lab12\\HardwareEFCore\\HardwareEFCore\\HardwareEFCore.csproj",
         "packagesPath": "C:\\Users\\Dylan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dylan\\Documents\\School\\ASP\\labRepos\\asp-lab10\\HardwareEFCore\\HardwareEFCore\\obj\\",
+        "outputPath": "C:\\Users\\Dylan\\Documents\\School\\ASP\\labRepos\\asp_lab12\\HardwareEFCore\\HardwareEFCore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dylan\\AppData\\Roaming\\NuGet\\NuGet.Config",

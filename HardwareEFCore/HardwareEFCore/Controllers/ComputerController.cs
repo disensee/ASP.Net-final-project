@@ -11,7 +11,7 @@ namespace HardwareEFCore.Controllers
     public class ComputerController : Controller
     {
         private IComputerRepository computerRepo;
-        private int pageSize = 1;
+        private int pageSize = 10;
 
         public ComputerController(IComputerRepository computerRepo)
         {
@@ -37,6 +37,17 @@ namespace HardwareEFCore.Controllers
 
             vModel.PagingInfo = pInfo;
             return View(vModel);
+        }
+
+        [HttpPost]
+        public IActionResult UploadImage()
+        {
+            foreach(var image in Request.Form.Files)
+            {
+                
+            }
+
+            return null;
         }
         
     }
